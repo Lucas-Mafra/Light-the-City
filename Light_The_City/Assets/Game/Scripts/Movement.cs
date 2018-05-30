@@ -7,8 +7,12 @@ public class Movement : MonoBehaviour {
 	public float speed;
 	private Rigidbody2D rb;
 	public float jump;
-	public float move;
-
+	public float moveInput;
+	private bool isgrounded;
+	public Transform check;
+	public float checkRadius;
+	public LayerMask Whatsground;
+	public int jumpx;
 
 	void Start () {
 
@@ -16,13 +20,14 @@ public class Movement : MonoBehaviour {
 	}
 		
 
-	void FixedUpdate()
+	void FixedUpdate ()
 	{
+		isgrounded = Physics2D.OverlapCircle (check.position, checkRadius, Whatsground);
 
-
-
-		move = Input.GetAxis ("Horizontal");
-		rb.velocity = new Vector2 (move * speed, rb.velocity.y);
-
+		moveInput = Input.GetAxis ("Horizontal");
+		rb.velocity = new Vector2 (moveInput * speed, rb.velocity.y);
+		if(Input.GetKeyDown(KeyCode.UpArrow)&& jumpx > 0){
+			rb.velocity = Vector2.up * jump;
 	}
+  } 
 }
