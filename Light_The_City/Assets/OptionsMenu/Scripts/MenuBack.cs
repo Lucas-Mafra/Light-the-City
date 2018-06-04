@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class MenuBack : MonoBehaviour {
+public class menuBack : MonoBehaviour {
 
 	// Use this for initialization
 	public void changeScene  () {
