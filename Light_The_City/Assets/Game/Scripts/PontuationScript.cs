@@ -5,7 +5,7 @@ using UnityEngine;
 public class PontuationScript : MonoBehaviour {
 
 	// Use this for initialization
-	void OnTriggerEnter2D(Collider2D col) 
+	void OnTriggerEnter2D(Collider2D other) 
 	{
 		ScoreScript.scoreValue += 10;
 	}

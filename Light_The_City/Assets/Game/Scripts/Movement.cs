@@ -23,7 +23,7 @@ public class Movement : MonoBehaviour {
 		moveInput = Input.GetAxis ("Horizontal");
 		rb.velocity = new Vector2 (moveInput * speed, rb.velocity.y);
 
-		if (Input.GetKey (KeyCode.UpArrow)) {
+		if (Input.GetKeyDown(KeyCode.UpArrow)) {
 			rb.velocity = new Vector2 (rb.velocity.x, jump);
 		}
 	}
